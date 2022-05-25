@@ -8,6 +8,9 @@ import Offers from './offers'
 export default function Home() {
   const [name, setName] = useState("")
   const [list, setList] = useState("")
+
+
+
   useEffect(() => {
     async function fetchData() {
       const res = await fetch(`${baseUrl}/api/blogs`)
@@ -21,11 +24,12 @@ export default function Home() {
 
   return (
     <>
-      <Banners></Banners>
-      <About></About>
-       <Blogs BlogData={list} ></Blogs>
-      <Offers></Offers>
-      <Testimonials></Testimonials>
+  
+         <Banners></Banners>
+          <About></About>
+          <Blogs BlogData={list} ></Blogs>
+          <Offers></Offers>
+          <Testimonials></Testimonials>
     </>
   )
 }

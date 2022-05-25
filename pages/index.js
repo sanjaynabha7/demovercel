@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react'
 import baseUrl from '../baseUrl'
 import Banners from '../components/banners'
+import Testimonials from '../components/testimonials'
+import About from './about'
+import Blogs from '../components/blogs'
+import Offers from './offers'
 export default function Home() {
   const [name, setName] = useState("")
   const [list, setList] = useState("")
@@ -18,12 +22,10 @@ export default function Home() {
   return (
     <>
       <Banners></Banners>
-      My name is {name}. I love Animals.
-      <ul>
-        {list && list.map((item, idx) => (
-          <li key={idx}>{item.title}</li>
-        ))}
-      </ul>
+      <About></About>
+       <Blogs BlogData={list} ></Blogs>
+      <Offers></Offers>
+      <Testimonials></Testimonials>
     </>
   )
 }

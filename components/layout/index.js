@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Footer from '../footer'
 import Header from '../header'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 const Layout = ({ children }) => {
+  const [headerClass, setHeaderClass] = useState(false)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (router.asPath === "/") {
+        setHeaderClass(true)
+    } else setHeaderClass(false)
+    
+}, [router.asPath])
   return (
     <>
       <Head>
@@ -15,8 +25,8 @@ const Layout = ({ children }) => {
         <meta name="description" content="" />
         <meta name="author" content="" />
       </Head>
-      <Header></Header>
-      <div>{children}</div>
+      <Header className={headerClass ? "header_section" : "header_section inner-header"}></Header>
+      <div className={headerClass ? "home-page" : "inner-page"}>{children}</div>
       <Footer></Footer>
     </>
   )

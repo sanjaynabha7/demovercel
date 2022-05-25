@@ -23,9 +23,9 @@ export default function Home({ name }) {
 
 export async function getServerSideProps(context) {
   const res = await fetch(`${baseUrl}/api/hello`)
-  const data = await res.json()
+  const data = await res.json() 
 
-  return {
+  return { 
     props: { name: data.name }, // will be passed to the page component as props
   }
 }

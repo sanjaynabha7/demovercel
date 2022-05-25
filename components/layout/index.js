@@ -7,7 +7,6 @@ const Layout = ({ children }) => {
   const [headerClass, setHeaderClass] = useState(false)
   const router = useRouter()
   const [lock, setLock] = useState(true)
-  const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [errorMsg, setErrorMsg] = useState("")
   useEffect(() => {
@@ -23,7 +22,7 @@ const Layout = ({ children }) => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    if (email === 'sanjaynabha7@gmail.com' && password === '9592122902') {
+    if (password === '9592122902') {
       setLock(false)
       localStorage.setItem('lock', true);
     } else {
@@ -48,10 +47,6 @@ const Layout = ({ children }) => {
       {lock ?
         <>
           <div className="mx-auto mt-5" style={{ width: '500px' }}>
-            <div className="form-group">
-              <label>Email address</label>
-              <input onChange={(event) => { setEmail(event.target.value) }} type="email" className="form-control" placeholder="Enter email" />
-            </div>
             <div className="form-group">
               <label>Password</label>
               <input onChange={(event) => { setPassword(event.target.value) }} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />

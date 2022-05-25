@@ -43,7 +43,7 @@ const Header = ({ className }) => {
                                     <Link href="/"><a >Home</a></Link>
                                     <Link href="/about"><a >About Us</a></Link>
                                     <Link href="/products"><a >Shop</a></Link>
-                                    <Link href="/blog"><a >Blog</a></Link>
+                                    <Link href="/blogs"><a >Blog</a></Link>
                                     <Link href="/contact-us"><a >Contact Us</a></Link>
                                 </div>
                             </div>

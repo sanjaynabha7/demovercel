@@ -22,7 +22,7 @@ export default function Home({name}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`${baseUrl}/api/hello`)
   const data = await res.json()
   return {

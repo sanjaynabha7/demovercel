@@ -111,9 +111,9 @@ const BlogDetails = ({ item, Categories }) => {
                                         <aside className="widget widget-categories">
                                             <h3 className="widget-title">Categories</h3>
                                             <ul>
-                                                {/* {Categories.map((item, idx) => (
+                                                {Categories.map((item, idx) => (
                                                     <li key={idx}><Link href={`/blogs/category/${item.slug}`}><a>{item.title} </a></Link><span>({item.allBlog.length})</span></li>
-                                                ))} */}
+                                                ))}
                                                 
                                             </ul>
                                         </aside>
@@ -156,8 +156,12 @@ export const getServerSideProps = async ({ params }) => {
     const res = await fetch(`${baseUrl}/api/blogs`)
     const data = await res.json();
     const filter = data.filter((res) => res.slug === slug)[0]
+
+    const category = await fetch(`${baseUrl}/api/blogs-categories`)
+    const dataCategory = await category.json();
+
     return {
-        props: { item: filter},
+        props: { item: filter, Categories: dataCategory},
     }
 }
 

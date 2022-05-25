@@ -5,7 +5,7 @@ const CategoryDetails = ({ item }) => {
     return (
         <>
             <section className="shop_section layout_padding">
-                {/* <div className="container">
+                <div className="container">
                     <div className='blog-details'>
                         <div className="container">
                             <div className='blog-details-inner'>
@@ -59,35 +59,22 @@ const CategoryDetails = ({ item }) => {
                             </div>
                         ))}
                     </div>
-                </div> */}
+                </div>
             </section>
         </>
 
     )
 }
 
-
-// export const getStaticPaths = async () => {
-//     const res = await fetch(`${baseUrl}/api/blogs-categories`)
-//     const data = await res.json();
-//     let paths = data.map(res => {
-//         return {
-//             params: { slug: res.slug }
-//         }
-//     })
-//     return { paths, fallback: false }
-// }
-
-// export const getStaticProps = async ({ params }) => {
-
-//     const slug = params.slug
-//     const res = await fetch(`${baseUrl}/api/blogs-categories`)
-//     const data = await res.json();
-//     const filter = data.filter((res) => res.slug === slug)[0]
-//     return {
-//         props: { item: filter },
-//     }
-// }
+export const getServerSideProps = async ({ params }) => {
+    const slug = params.slug
+    const res = await fetch(`${baseUrl}/api/blogs-categories`)
+    const data = await res.json();
+    const filter = data.filter((res) => res.slug === slug)[0]
+    return {
+        props: { item: filter },
+    }
+}
 
 
 export default CategoryDetails

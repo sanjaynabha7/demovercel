@@ -1,4 +1,7 @@
+import initDB from '../../helper/initDB'
 
+initDB()
+console.log("Render")
 export default function handler(req, res) {
     res.status(200).json(
         [{

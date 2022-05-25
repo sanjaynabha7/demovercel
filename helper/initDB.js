@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+dotenv.config();
+
 const DB = process.env.DATABASE;
 function initDB() {
-    mongoose.connect(DB, {
+    mongoose.connect('mongodb+srv://Nabha123:Nabha123@cluster0.iafkk.mongodb.net/srjewelry?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true, 
         // useCreateIndex: true,

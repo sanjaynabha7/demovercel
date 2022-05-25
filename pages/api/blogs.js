@@ -1,5 +1,6 @@
 import initDB from '../../helper/initDB'
 import Blogs from '../../models/blogs'
+
 initDB()
 console.log("Render")
 export default async function handler(req, res) {

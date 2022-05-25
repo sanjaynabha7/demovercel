@@ -17,7 +17,7 @@ export default function Home({name}) {
 
   return (
     <div className={styles.container}>
-      My name is {name}. I love coding.
+      My name is {name}. I love Animals.
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import styles from '../styles/Home.module.css'
 import baseUrl from '../baseUrl'
 export default function Home() {
   const [name, setName] = useState("")
@@ -16,7 +15,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className={styles.container}>
+    <div>
       My name is {name}. I love Animals.
       <ul>
         {list && list.map((item, idx) => (

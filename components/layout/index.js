@@ -47,11 +47,14 @@ const Layout = ({ children }) => {
       {lock ?
         <>
           <div className="mx-auto mt-5" style={{ width: '500px' }}>
-            <div className="form-group">
-              <label>Password</label>
-              <input onChange={(event) => { setPassword(event.target.value) }} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-            </div>
-            <button onClick={handleClick} type="submit" className="btn btn-primary">Submit</button>
+            <form onSubmit={handleClick}>
+              <div className="form-group">
+                <label>Password</label>
+                <input onChange={(event) => { setPassword(event.target.value) }} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+              </div>
+              <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+
             <p>{errorMsg}</p>
           </div>
         </>
